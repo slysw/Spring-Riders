@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Breeds -->
+    <bean class="spring.beans.Breed" id="orlov">
+        <constructor-arg value="Orlov Trotter"/>
+    </bean>
+
+<!--    <bean class="spring.beans.Breed" id="mustang">
+        <constructor-arg value="Cerbat Mustang"/>
+    </bean>-->
+
+    <bean class="spring.beans.Breed" id="kabarda">
+        <constructor-arg value="Kabarda horse"/>
+    </bean>
+
+<!--    <bean class="spring.beans.Breed" id="mongolian">
+        <constructor-arg value="Mongolian Horse"/>
+    </bean>
+
+    <bean class="spring.beans.Breed" id="tersk">
+        <constructor-arg value="Tersk horse"/>
+    </bean>-->
+
+    <!-- Riders -->
+
+    <bean class="spring.beans.Rider" id="mikle">
+        <constructor-arg value="Mikhail Skuratov"/>
+        <constructor-arg value="40.5"/>
+    </bean>
+
+    <bean class="spring.beans.Rider" id="slawa">
+        <constructor-arg value="Viachaslau Skuratau"/>
+        <constructor-arg value="75.5"/>
+    </bean>
+
+<!--    <bean class="spring.beans.Rider" id="kadirov">
+        <constructor-arg value="Ramzan Kadirov"/>
+        <constructor-arg value="80.0"/>
+    </bean>
+
+    <bean class="spring.beans.Rider" id="obama">
+        <constructor-arg value="Barack Hussein Obama"/>
+        <constructor-arg value="65.5"/>
+    </bean>
+
+    <bean class="spring.beans.Rider" id="benladen">
+        <constructor-arg value="Ben Laden"/>
+        <constructor-arg value="70.0"/>
+    </bean>-->
+
+    <!-- Horses -->
+
+    <bean class="spring.beans.Horse" id="horse1">
+        <constructor-arg value="Star"/>
+        <constructor-arg value="1.5"/>
+        <constructor-arg ref="orlov"/>
+        <constructor-arg ref="slawa"/>
+    </bean>
+
+<!--    <bean class="spring.beans.Horse" id="horse2">
+        <constructor-arg value="Flash"/>
+        <constructor-arg value="2.5"/>
+        <constructor-arg ref="mustang"/>
+        <constructor-arg ref="obama"/>
+    </bean>-->
+
+    <bean class="spring.beans.Horse" id="horse3">
+        <constructor-arg value="Beam"/>
+        <constructor-arg value="2.0"/>
+        <constructor-arg ref="kabarda"/>
+        <constructor-arg ref="mikle"/>
+    </bean>
+
+<!--    <bean class="spring.beans.Horse" id="horse4">
+        <constructor-arg value="Shredder"/>
+        <constructor-arg value="5.5"/>
+        <constructor-arg ref="mongolian"/>
+        <constructor-arg ref="mikle"/>
+    </bean>
+
+    <bean class="spring.beans.Horse" id="horse5">
+        <constructor-arg value="Terror"/>
+        <constructor-arg value="7.0"/>
+        <constructor-arg ref="tersk"/>
+        <constructor-arg ref="benladen"/>
+    </bean>-->
+
+    <bean class="spring.beans.Race" id="race">
+        <constructor-arg value="2"/>
+    </bean>
+
+    <bean class="spring.services.impl.HorseServiceImpl" id="horseService"/>
+
+    <bean class="spring.services.impl.RaceServiceImpl" id="raceService"/>
+
+    <bean class="spring.services.impl.EmulationServiceImpl" id="emulationService"/>
+
+</beans>
